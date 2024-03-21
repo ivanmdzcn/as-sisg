@@ -91,6 +91,11 @@ public class admin extends javax.swing.JFrame {
         jMenu3.setText("Paciente");
 
         jMenuItem3.setText("Agregar paciente");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItem3);
 
         jMenuBar1.add(jMenu3);
@@ -137,6 +142,10 @@ public class admin extends javax.swing.JFrame {
         Login ventanaLogin = new Login();
         ventanaLogin.setVisible(true);
     }//GEN-LAST:event_jMenu5MouseClicked
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     /**
      * @param args the command line arguments
