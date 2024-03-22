@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 18-03-2024 a las 00:40:51
--- Versión del servidor: 10.4.32-MariaDB
--- Versión de PHP: 8.2.12
+-- Host: 127.0.0.1:4306
+-- Generation Time: Mar 22, 2024 at 08:56 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `sisg`
+-- Database: `sisg`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `empleado`
+-- Table structure for table `empleado`
 --
 
 CREATE TABLE `empleado` (
@@ -38,7 +38,7 @@ CREATE TABLE `empleado` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `empleado`
+-- Dumping data for table `empleado`
 --
 
 INSERT INTO `empleado` (`id_empleado`, `dpi`, `nombre`, `edad`, `sexo`, `email`, `activo`) VALUES
@@ -52,7 +52,43 @@ INSERT INTO `empleado` (`id_empleado`, `dpi`, `nombre`, `edad`, `sexo`, `email`,
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `usuario`
+-- Table structure for table `paciente`
+--
+
+CREATE TABLE `paciente` (
+  `id_paciente` int(11) NOT NULL,
+  `dpi` varchar(13) NOT NULL,
+  `Primer Nombre` varchar(50) NOT NULL,
+  `Segundo Nombre` varchar(50) NOT NULL,
+  `Apellido Paterno` varchar(50) NOT NULL,
+  `Apellido Materno` varchar(50) NOT NULL,
+  `Edad` int(2) NOT NULL,
+  `Sexo` varchar(10) NOT NULL,
+  `Fecha de Nacimiento` date NOT NULL,
+  `Correo Electronico` varchar(100) NOT NULL,
+  `Telefono` int(15) NOT NULL,
+  `Direccion` varchar(100) NOT NULL,
+  `Alergias` varchar(255) NOT NULL,
+  `Enfermedades previas` varchar(255) NOT NULL,
+  `activo` int(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `paciente`
+--
+
+INSERT INTO `paciente` (`id_paciente`, `dpi`, `Primer Nombre`, `Segundo Nombre`, `Apellido Paterno`, `Apellido Materno`, `Edad`, `Sexo`, `Fecha de Nacimiento`, `Correo Electronico`, `Telefono`, `Direccion`, `Alergias`, `Enfermedades previas`, `activo`) VALUES
+(1, '1234567891012', 'Juan', 'Antonio', 'González', 'López', 35, 'M', '1989-05-15', 'juan@example.com', 123456789, 'Calle 123, Ciudad', 'Ninguna', 'Hipertensión', 1),
+(2, '2345678910123', 'María', 'Isabel', 'Martínez', 'García', 28, 'F', '1996-10-25', 'maria@example.com', 987654321, 'Avenida Principal, Pueblo', 'Polen', 'Asma', 1),
+(3, '3456789101234', 'Luis', 'Alberto', 'Hernández', 'Pérez', 42, 'M', '1982-02-08', 'luis@example.com', 654321987, 'Calle Central, Villa', 'Penicilina', 'Diabetes', 1),
+(4, '4567891012345', 'Ana', 'María', 'López', 'Rodríguez', 50, 'F', '1974-07-12', 'ana@example.com', 123789456, 'Avenida Principal, Aldea', 'Frutos secos', 'Ninguna', 1),
+(5, '5678910123456', 'Javier', 'Alejandro', 'Sánchez', 'Gómez', 31, 'M', '1991-11-30', 'javier@example.com', 789456123, 'Calle Secundaria, Pueblo', 'Ninguna', 'Asma', 1),
+(6, '1222222222', 'axel', 'alvarado', 'alvarado', 'arana', 12, 'M', '2002-06-26', 'achel@gmail.com', 2222222, 'mi casa', 'unicornios', 'voces', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `usuario`
 --
 
 CREATE TABLE `usuario` (
@@ -69,7 +105,7 @@ CREATE TABLE `usuario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `usuario`
+-- Dumping data for table `usuario`
 --
 
 INSERT INTO `usuario` (`id_usuario`, `nombre`, `apellido_paterno`, `apellido_materno`, `telefono`, `pregunta_secreta`, `respuesta_pregunta`, `estado`, `usuario`, `contrasena`) VALUES
@@ -80,7 +116,7 @@ INSERT INTO `usuario` (`id_usuario`, `nombre`, `apellido_paterno`, `apellido_mat
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `usuarios`
+-- Table structure for table `usuarios`
 --
 
 CREATE TABLE `usuarios` (
@@ -92,7 +128,7 @@ CREATE TABLE `usuarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `usuarios`
+-- Dumping data for table `usuarios`
 --
 
 INSERT INTO `usuarios` (`id_usuario`, `username`, `password`, `privilegio`, `activo`) VALUES
@@ -100,45 +136,57 @@ INSERT INTO `usuarios` (`id_usuario`, `username`, `password`, `privilegio`, `act
 (2, 'lester', '1234', 'empleado', 1);
 
 --
--- Índices para tablas volcadas
+-- Indexes for dumped tables
 --
 
 --
--- Indices de la tabla `empleado`
+-- Indexes for table `empleado`
 --
 ALTER TABLE `empleado`
   ADD PRIMARY KEY (`id_empleado`);
 
 --
--- Indices de la tabla `usuario`
+-- Indexes for table `paciente`
+--
+ALTER TABLE `paciente`
+  ADD PRIMARY KEY (`id_paciente`);
+
+--
+-- Indexes for table `usuario`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`id_usuario`);
 
 --
--- Indices de la tabla `usuarios`
+-- Indexes for table `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`id_usuario`);
 
 --
--- AUTO_INCREMENT de las tablas volcadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de la tabla `empleado`
+-- AUTO_INCREMENT for table `empleado`
 --
 ALTER TABLE `empleado`
-  MODIFY `id_empleado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_empleado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT de la tabla `usuario`
+-- AUTO_INCREMENT for table `paciente`
+--
+ALTER TABLE `paciente`
+  MODIFY `id_paciente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `usuario`
 --
 ALTER TABLE `usuario`
   MODIFY `id_usuario` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT de la tabla `usuarios`
+-- AUTO_INCREMENT for table `usuarios`
 --
 ALTER TABLE `usuarios`
   MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
