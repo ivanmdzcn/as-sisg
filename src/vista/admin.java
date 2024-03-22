@@ -45,7 +45,6 @@ public class admin extends javax.swing.JFrame {
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenu7 = new javax.swing.JMenu();
         jMenuItem6 = new javax.swing.JMenuItem();
-        jMenu9 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("SISG");
@@ -115,9 +114,6 @@ public class admin extends javax.swing.JFrame {
         jMenu7.add(jMenuItem6);
 
         jMenuBar1.add(jMenu7);
-
-        jMenu9.setText("jMenu9");
-        jMenuBar1.add(jMenu9);
 
         setJMenuBar(jMenuBar1);
 
@@ -197,7 +193,6 @@ public class admin extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenu jMenu7;
     private javax.swing.JMenu jMenu8;
-    private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;

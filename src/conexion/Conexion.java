@@ -22,7 +22,7 @@ public class Conexion {
 
     public static Connection getConexion() {
 
-        String url = "jdbc:mysql://localhost:3306/sisg"; // Reemplaza "tu_base_de_datos" según tu configuración
+        String url = "jdbc:mysql://localhost:4306/sisg"; // Reemplaza "tu_base_de_datos" según tu configuración
         String usuario = "root"; // Reemplaza con tu nombre de usuario de MySQL
         String contrasena = ""; // Reemplaza con tu contraseña de MySQL
 
