@@ -1,7 +1,6 @@
 
 package vista;
 
-
 import javax.swing.JLabel;
 
 /**
@@ -65,6 +64,11 @@ public class admin extends javax.swing.JFrame {
         jMenu8.setText("Usuarios");
 
         jMenuItem7.setText("Rregistro de usuarios");
+        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem7ActionPerformed(evt);
+            }
+        });
         jMenu8.add(jMenuItem7);
 
         jMenuBar1.add(jMenu8);
@@ -137,6 +141,13 @@ public class admin extends javax.swing.JFrame {
         Login ventanaLogin = new Login();
         ventanaLogin.setVisible(true);
     }//GEN-LAST:event_jMenu5MouseClicked
+
+    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        Usuario ventanaUsuario = new Usuario();
+        ventanaUsuario.setVisible(true);          
+    }//GEN-LAST:event_jMenuItem7ActionPerformed
 
     /**
      * @param args the command line arguments
