@@ -81,6 +81,11 @@ public class inicio extends javax.swing.JFrame {
         jMenu6.setText("Citas");
 
         jMenuItem5.setText("Programar cita");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
         jMenu6.add(jMenuItem5);
 
         jMenuBar1.add(jMenu6);
@@ -106,6 +111,14 @@ public class inicio extends javax.swing.JFrame {
         Login ventanaLogin = new Login();
         ventanaLogin.setVisible(true);
     }//GEN-LAST:event_jMenu5MouseClicked
+
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        Citas ventanaCitas = new Citas();
+        ventanaCitas.setVisible(true);
+        setLocationRelativeTo(null);
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     /**
      * @param args the command line arguments
