@@ -59,6 +59,11 @@ public class inicio extends javax.swing.JFrame {
         jMenu2.setText("Medicos");
 
         jMenuItem2.setText("Registro de medicos");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem2);
 
         jMenuBar1.add(jMenu2);
@@ -66,6 +71,11 @@ public class inicio extends javax.swing.JFrame {
         jMenu3.setText("Paciente");
 
         jMenuItem3.setText("Agregar paciente");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItem3);
 
         jMenuBar1.add(jMenu3);
@@ -102,6 +112,19 @@ public class inicio extends javax.swing.JFrame {
         Login ventanaLogin = new Login();
         ventanaLogin.setVisible(true);
     }//GEN-LAST:event_jMenu5MouseClicked
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        // TODO add your handling code here:
+      
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        // TODO add your handling code here:
+          this.dispose();
+        Medicos ventanaMedicos = new Medicos();
+        ventanaMedicos.setVisible(true);
+        setLocationRelativeTo(null);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     /**
      * @param args the command line arguments
