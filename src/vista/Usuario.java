@@ -307,7 +307,7 @@ public class Usuario extends javax.swing.JFrame {
        
         try {
             Connection con = Conexion.getConexion();
-            PreparedStatement ps = con.prepareStatement("update usuarios set activo=0 where id_usuarios=?");           
+            PreparedStatement ps = con.prepareStatement("update usuarios set activo=0 where id_usuario=?");           
             ps.setInt(1, id_usuario);
             ps.execute();
             JOptionPane.showMessageDialog(null, "Registro Eliminado");
